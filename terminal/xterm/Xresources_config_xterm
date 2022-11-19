@@ -1,0 +1,20 @@
+#Funte
+xterm*selectToClipboard: true 
+xterm*renderFont: true
+xterm*faceName: monospace
+xterm*faceSize: 14
+
+#Fondo
+xterm*foreground: rgb:ff/ff/ff
+xterm*background: rgb:00/00/00
+
+#Para permitir hacer corta y pega
+xterm*VT100.Translations: #override \
+      Shift <KeyPress> Insert: insert-selection(CLIPBOARD) \n\
+      Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
+      Ctrl Shift <Key>C:    copy-selection(CLIPBOARD) \n\
+      Ctrl <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY)
+
+# Para poder hacer scroll en todas las direcciones
+xterm*scrollBar: true
+xterm*rightScrollBar: true
